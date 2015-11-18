@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MvO-tC-AbS">
-                                <rect key="frame" x="0.0" y="244" width="320" height="187"/>
+                                <rect key="frame" x="0.0" y="244" width="320" height="205"/>
                                 <animations/>
                             </pickerView>
                         </subviews>

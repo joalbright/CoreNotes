@@ -61,7 +61,7 @@ class NotesTVC: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
                 
         let view = UIView(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
-        view.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        view.backgroundColor = categories[section].category.color ?? UIColor(white: 0, alpha: 0.5)
         
         let label = UILabel(frame: view.frame)
         label.textColor = UIColor.whiteColor()
