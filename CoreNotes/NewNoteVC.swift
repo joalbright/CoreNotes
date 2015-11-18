@@ -7,29 +7,55 @@
 //
 
 import UIKit
+import CoreData
 
 class NewNoteVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var noteTextView: UITextView!
+    
+    @IBOutlet weak var categoryPicker: UIPickerView!
+    
+    @IBAction func cancel(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func create(sender: AnyObject) {
+        
+        createNote()
+        dismissViewControllerAnimated(true, completion: nil)
+        
     }
-    */
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        categoryPicker.dataSource = self
+        fetchCategories()
+        
+    }
+    
+    var categories: [Category] = []
 
 }
+
+extension NewNoteVC: UIPickerViewDataSource {
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return categories.count
+        
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        
+        return 1
+        
+    }
+    
+}
+
+
+
+

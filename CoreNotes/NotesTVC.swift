@@ -11,52 +11,12 @@ import CoreData
 
 class NotesTVC: UITableViewController {
 
-    var categories: [[String:AnyObject]] = []
+    var categories: [CategoryDictionary] = []
     
-//    [ // array of categories
-//    
-//        [ // category dictionary
-//
-//            "category" : NSManagedObject, // category object
-//
-//            "notes" : [ // notes array
-//            
-//                NSManagedObject, // note object
-//                NSManagedObject // note object
-//            
-//            ]
-//            
-//        ]
-//    
-//    ]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // make a fetch request to fill tableview with notes where sections = categories
-        
-        guard let appD = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
-        
-        let categoryRequest = NSFetchRequest(entityName: "Category")
-        
-        let foundCategories = (try? appD.managedObjectContext.executeFetchRequest(categoryRequest) as? [NSManagedObject] ?? []) ?? []
-        
-        for category in foundCategories {
-            
-            let newCatDictionary = [
-            
-                "category" : category,
-                "notes" : []
-            
-            ]
-            
-            categories.append(newCatDictionary)
-            
-        }
-        
-        print(categories)
-        
-        tableView.reloadData()
+        fetchCategoriesAndNotes()
         
     }
 
@@ -68,9 +28,7 @@ class NotesTVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        let category = categories[section]
-        let notes = category["notes"] as? [AnyObject]
-        return notes?.count ?? 0
+        return categories[section].notes.count ?? 0
     
     }
 
@@ -78,6 +36,7 @@ class NotesTVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell", forIndexPath: indexPath)
 
+        cell.textLabel?.text = "Note"
         // get current note and set content
 
         return cell
@@ -100,17 +59,13 @@ class NotesTVC: UITableViewController {
     // section header layout methods
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let category = categories[section]
-        let managedObject = category["category"] as? NSManagedObject
-        let name = managedObject?.valueForKey("name") as? String
-        
+                
         let view = UIView(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
         view.backgroundColor = UIColor(white: 0, alpha: 0.5)
         
         let label = UILabel(frame: view.frame)
         label.textColor = UIColor.whiteColor()
-        label.text = name
+        label.text = categories[section].category.name
         view.addSubview(label)
         
         return view
@@ -124,3 +79,4 @@ class NotesTVC: UITableViewController {
     }
     
 }
+

@@ -74,15 +74,21 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvd-og-G4F">
                                 <rect key="frame" x="20" y="500" width="134" height="47"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="jwB-P0-UdO" eventType="touchUpInside" id="Zoh-ZT-Vlc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13E-NM-sDw">
                                 <rect key="frame" x="162" y="499" width="138" height="49"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="create:" destination="jwB-P0-UdO" eventType="touchUpInside" id="pet-c8-VWI"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MvO-tC-AbS">
-                                <rect key="frame" x="0.0" y="244" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="244" width="320" height="187"/>
                                 <animations/>
                             </pickerView>
                         </subviews>
@@ -90,6 +96,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="categoryPicker" destination="MvO-tC-AbS" id="zGK-g4-XxP"/>
+                        <outlet property="noteTextView" destination="92v-dH-Brk" id="PlF-Kb-TAa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMV-Ec-6d7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

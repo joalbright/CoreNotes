@@ -11,7 +11,11 @@ import CoreData
 
 class NewCategoryVC: UIViewController {
 
-    @IBOutlet weak var categoryNameField: UITextField!
+    @IBOutlet weak var categoryNameField: UITextField! {
+        
+        didSet { categoryNameField.delegate = self }
+        
+    }
 
     @IBOutlet weak var categoryDatePicker: UIDatePicker!
     
@@ -23,16 +27,7 @@ class NewCategoryVC: UIViewController {
     
     @IBAction func create(sender: AnyObject) {
         
-        guard let appD = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
-        
-        // entity description
-        let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: appD.managedObjectContext)
-        
-        newCategory.setValue(categoryNameField.text, forKey: "name")
-        
-        // run saveContext()
-        appD.saveContext()
-        
+        createCategory()
         dismissViewControllerAnimated(true, completion: nil)
         
     }
