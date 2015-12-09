@@ -72,7 +72,7 @@ class CoreNotesUITests: XCTestCase {
             
 //            let random = arc4random_uniform(UInt32(categoryCount)) + 1
             
-            app.pickerWheels["1 of 7"].tap()
+//            app.pickerWheels["1 of 7"].tap()
 //            app.pickerWheels["\(random) of \(categoryCount)"].tap()
             
             app.buttons["Create"].tap()
