@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -63,37 +64,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="92v-dH-Brk">
-                                <rect key="frame" x="20" y="20" width="280" height="197"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="92v-dH-Brk">
+                                <rect key="frame" x="16" y="20" width="288" height="237"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvd-og-G4F">
-                                <rect key="frame" x="20" y="500" width="134" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvd-og-G4F">
+                                <rect key="frame" x="16" y="497" width="140" height="50"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VVV-pv-RYD"/>
+                                </constraints>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="jwB-P0-UdO" eventType="touchUpInside" id="Zoh-ZT-Vlc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13E-NM-sDw">
-                                <rect key="frame" x="162" y="499" width="138" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13E-NM-sDw">
+                                <rect key="frame" x="164" y="498" width="140" height="50"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ndg-pH-XFE"/>
+                                </constraints>
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="create:" destination="jwB-P0-UdO" eventType="touchUpInside" id="pet-c8-VWI"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MvO-tC-AbS">
-                                <rect key="frame" x="0.0" y="244" width="320" height="205"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MvO-tC-AbS">
+                                <rect key="frame" x="0.0" y="277" width="320" height="200"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="e6a-xx-Ol0"/>
+                                </constraints>
                             </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="13E-NM-sDw" firstAttribute="leading" secondItem="bvd-og-G4F" secondAttribute="trailing" constant="8" id="1OY-ep-T1u"/>
+                            <constraint firstItem="bvd-og-G4F" firstAttribute="top" secondItem="MvO-tC-AbS" secondAttribute="bottom" constant="20" id="37n-lD-JO2"/>
+                            <constraint firstItem="MvO-tC-AbS" firstAttribute="leading" secondItem="KXu-pe-23T" secondAttribute="leading" id="5ks-61-bTO"/>
+                            <constraint firstItem="MvO-tC-AbS" firstAttribute="top" secondItem="92v-dH-Brk" secondAttribute="bottom" constant="20" id="BOA-Jq-UmW"/>
+                            <constraint firstItem="92v-dH-Brk" firstAttribute="leading" secondItem="KXu-pe-23T" secondAttribute="leadingMargin" id="CBK-pg-jjC"/>
+                            <constraint firstItem="13E-NM-sDw" firstAttribute="width" secondItem="bvd-og-G4F" secondAttribute="width" id="Hae-An-fPO"/>
+                            <constraint firstAttribute="trailing" secondItem="MvO-tC-AbS" secondAttribute="trailing" id="Rpy-fT-OmG"/>
+                            <constraint firstItem="Ada-5m-Fte" firstAttribute="top" secondItem="13E-NM-sDw" secondAttribute="bottom" constant="20" id="TeV-Ry-2d4"/>
+                            <constraint firstItem="92v-dH-Brk" firstAttribute="top" secondItem="hJx-eL-oP0" secondAttribute="bottom" id="Uj8-vi-MpC"/>
+                            <constraint firstItem="Ada-5m-Fte" firstAttribute="top" secondItem="bvd-og-G4F" secondAttribute="bottom" constant="21" id="fes-Sw-A4D"/>
+                            <constraint firstItem="13E-NM-sDw" firstAttribute="trailing" secondItem="KXu-pe-23T" secondAttribute="trailingMargin" id="jBY-s0-fmV"/>
+                            <constraint firstItem="92v-dH-Brk" firstAttribute="trailing" secondItem="KXu-pe-23T" secondAttribute="trailingMargin" id="vbJ-WN-h9t"/>
+                            <constraint firstItem="bvd-og-G4F" firstAttribute="leading" secondItem="KXu-pe-23T" secondAttribute="leadingMargin" id="zRg-e2-3hf"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -117,38 +142,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-5d-553">
-                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-5d-553">
+                                <rect key="frame" x="16" y="20" width="288" height="40"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="o2x-ad-tFA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Ds-bs-wFk">
-                                <rect key="frame" x="0.0" y="260" width="320" height="199"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4z-xB-IPH">
+                                <rect key="frame" x="16" y="499" width="140" height="50"/>
                                 <animations/>
-                                <date key="date" timeIntervalSinceReferenceDate="469392997.73630601">
-                                    <!--2015-11-16 18:56:37 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4z-xB-IPH">
-                                <rect key="frame" x="20" y="502" width="134" height="47"/>
-                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DPi-uX-lqk"/>
+                                </constraints>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="hJh-NI-6XA" eventType="touchUpInside" id="Qcc-Jo-pCV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wud-Zn-Ip5">
-                                <rect key="frame" x="162" y="501" width="138" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wud-Zn-Ip5">
+                                <rect key="frame" x="164" y="500" width="140" height="50"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mxk-ju-9Hm"/>
+                                </constraints>
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="create:" destination="hJh-NI-6XA" eventType="touchUpInside" id="762-8z-q6k"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Ds-bs-wFk">
+                                <rect key="frame" x="0.0" y="279" width="320" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7yT-fl-dHh"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="469392997.73630601">
+                                    <!--2015-11-16 18:56:37 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NNu-5d-553" firstAttribute="leading" secondItem="gj8-zn-TVO" secondAttribute="leadingMargin" id="1AN-iG-Q0P"/>
+                            <constraint firstItem="Wud-Zn-Ip5" firstAttribute="width" secondItem="J4z-xB-IPH" secondAttribute="width" id="3z6-1N-EAM"/>
+                            <constraint firstItem="8Ds-bs-wFk" firstAttribute="leading" secondItem="gj8-zn-TVO" secondAttribute="leading" id="BCS-Iu-Mvy"/>
+                            <constraint firstItem="J4z-xB-IPH" firstAttribute="leading" secondItem="gj8-zn-TVO" secondAttribute="leadingMargin" id="BNY-9l-Dhn"/>
+                            <constraint firstItem="Wud-Zn-Ip5" firstAttribute="leading" secondItem="J4z-xB-IPH" secondAttribute="trailing" constant="8" id="Ce4-kJ-ixb"/>
+                            <constraint firstAttribute="trailing" secondItem="8Ds-bs-wFk" secondAttribute="trailing" id="KNV-sR-r8M"/>
+                            <constraint firstItem="J4z-xB-IPH" firstAttribute="top" secondItem="8Ds-bs-wFk" secondAttribute="bottom" constant="20" id="MT9-Bx-RaR"/>
+                            <constraint firstItem="NNu-5d-553" firstAttribute="trailing" secondItem="gj8-zn-TVO" secondAttribute="trailingMargin" id="SwL-F9-kL9"/>
+                            <constraint firstItem="Wud-Zn-Ip5" firstAttribute="trailing" secondItem="gj8-zn-TVO" secondAttribute="trailingMargin" id="XZl-fI-ulp"/>
+                            <constraint firstItem="Iew-Wc-dzY" firstAttribute="top" secondItem="J4z-xB-IPH" secondAttribute="bottom" constant="19" id="guU-3R-Ltf"/>
+                            <constraint firstItem="NNu-5d-553" firstAttribute="top" secondItem="7nW-UT-r4a" secondAttribute="bottom" id="kja-6S-qHW"/>
+                            <constraint firstItem="Iew-Wc-dzY" firstAttribute="top" secondItem="Wud-Zn-Ip5" secondAttribute="bottom" constant="18" id="rqX-dX-ss1"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
