@@ -48,7 +48,11 @@ class NotesTVC: UITableViewController {
         
         if editingStyle == .Delete {
             
-            // remove note from core data
+            // remove note from core data            
+            deleteNote(categories[indexPath.section].notes[indexPath.row])
+            
+            // manually delete that note
+            categories[indexPath.section].notes.removeAtIndex(indexPath.row)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             

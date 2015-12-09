@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import CoreData
+@testable import CoreNotes
 
 class CoreNotesUITests: XCTestCase {
         
@@ -28,9 +30,73 @@ class CoreNotesUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCreateCategory() {
+        
+        let app = XCUIApplication()
+        
+        let categoryNames: [String] = []
+        
+        for name in categoryNames {
+            
+            app.navigationBars["CoreNotes.NotesTVC"].buttons["Organize"].tap()
+            
+            let textField = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.TextField).element
+            
+            textField.tap()
+            textField.typeText(name)
+            
+            app.buttons["Return"].tap()
+            
+            app.buttons["Create"].tap()
+            
+        }
+        
+        
+    }
+    
+    func testCreateNote() {
+        
+        let app = XCUIApplication()
+        
+        var categoryCount = 7
+        
+//        let request = NSFetchRequest(entityName: "Category")
+//        
+//        guard let _appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
+//        
+//        categoryCount = (try? _appDelegate.managedObjectContext.executeFetchRequest(request))?.count ?? 0
+        
+        for _ in 0...5 {
+            
+            app.navigationBars["CoreNotes.NotesTVC"].buttons["Add"].tap()
+            
+//            let random = arc4random_uniform(UInt32(categoryCount)) + 1
+            
+            app.pickerWheels["1 of 7"].tap()
+//            app.pickerWheels["\(random) of \(categoryCount)"].tap()
+            
+            app.buttons["Create"].tap()
+            
+        }
+        
+    }
+    
+    func testDeleteAllRows() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let tablesQuery = XCUIApplication().tables
+        
+        let cellCount = tablesQuery.childrenMatchingType(.Cell).count
+        
+        for _ in 0..<cellCount {
+            
+            tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0).staticTexts["Note"].swipeLeft()
+            
+            tablesQuery.buttons["Delete"].tap()
+            
+        }
+        
     }
     
 }
