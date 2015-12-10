@@ -52,20 +52,6 @@ class CoreNotesTests: XCTestCase, Fetchable {
         super.tearDown()
     }
     
-    func testButtonDidSetTitle() {
-        
-        button?.setTitle("Push Me", forState: .Normal)
-        
-        XCTAssertTrue(!(button?.titleLabel?.text ?? "").isEmpty, "The button title text is empty.")
-        
-    }
-    
-    func testButtonDidNotSetTitle() {
-        
-        XCTAssertTrue((button?.titleLabel?.text ?? "").isEmpty, "The button title text is not empty.")
-        
-    }
-    
     func testCreateNewCategory() {
         
         let newCategory = Category.category()
