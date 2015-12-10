@@ -58,7 +58,7 @@ class CoreNotesUITests: XCTestCase {
         
         let app = XCUIApplication()
         
-        var categoryCount = 7
+//        var categoryCount = 7
         
 //        let request = NSFetchRequest(entityName: "Category")
 //        
