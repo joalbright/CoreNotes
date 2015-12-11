@@ -653,7 +653,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = CoreNotesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.jo2.CoreNotesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jo2.CoreNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = CoreNotes;
 				USES_XCTRUNNER = YES;
@@ -666,7 +666,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = CoreNotesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.jo2.CoreNotesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jo2.CoreNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = CoreNotes;
 				USES_XCTRUNNER = YES;

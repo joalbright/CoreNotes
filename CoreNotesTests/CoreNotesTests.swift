@@ -49,6 +49,8 @@ class CoreNotesTests: XCTestCase, Fetchable {
             
         }
         
+        _appDelegate.saveContext()
+        
         super.tearDown()
     }
     
