@@ -24,6 +24,9 @@
 		A9B7645C1BFCC2E700DA25F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B7645A1BFCC2E700DA25F4 /* Fabric.framework */; };
 		A9B7645D1BFCC2E700DA25F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B7645B1BFCC2E700DA25F4 /* Crashlytics.framework */; };
 		A9B7645F1BFCCCA700DA25F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7645E1BFCCCA700DA25F4 /* Constants.swift */; };
+		A9D2CE1B1C1B1C17000E1639 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = A9D2CE181C1B1C17000E1639 /* Appfile */; };
+		A9D2CE1C1C1B1C17000E1639 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9D2CE191C1B1C17000E1639 /* Fastfile */; };
+		A9D2CE1D1C1B1C17000E1639 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = A9D2CE1A1C1B1C17000E1639 /* Snapfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		A9B7645A1BFCC2E700DA25F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A9B7645B1BFCC2E700DA25F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A9B7645E1BFCCCA700DA25F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A9D2CE181C1B1C17000E1639 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
+		A9D2CE191C1B1C17000E1639 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
+		A9D2CE1A1C1B1C17000E1639 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = fastlane/Snapfile; sourceTree = SOURCE_ROOT; };
 		CDBFFD34CD31B7E70DADB91D /* Pods_CoreNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21846788F65779BD558496B /* Pods-CoreNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreNotesUITests/Pods-CoreNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F5EFD3746B471D594077E09E /* Pods-CoreNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreNotesUITests/Pods-CoreNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		A9B7642E1BFA5FDD00DA25F4 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				A9D2CE1E1C1B1C20000E1639 /* Fastlane */,
 				A96585721BFE3029003398AB /* Podfile */,
 				A9B763FD1BFA4BCB00DA25F4 /* AppDelegate.swift */,
 				A9B764071BFA4BCB00DA25F4 /* Assets.xcassets */,
@@ -178,6 +185,16 @@
 				12C961E831F448AE36B57F23 /* Pods_CoreNotesUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9D2CE1E1C1B1C20000E1639 /* Fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				A9D2CE181C1B1C17000E1639 /* Appfile */,
+				A9D2CE191C1B1C17000E1639 /* Fastfile */,
+				A9D2CE1A1C1B1C17000E1639 /* Snapfile */,
+			);
+			name = Fastlane;
 			sourceTree = "<group>";
 		};
 		EBD67877A8C09A33714F7DCB /* Pods */ = {
@@ -302,9 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D2CE1C1C1B1C17000E1639 /* Fastfile in Resources */,
 				A9B7640B1BFA4BCB00DA25F4 /* LaunchScreen.storyboard in Resources */,
+				A9D2CE1B1C1B1C17000E1639 /* Appfile in Resources */,
 				A9B764081BFA4BCB00DA25F4 /* Assets.xcassets in Resources */,
 				A96585731BFE3029003398AB /* Podfile in Resources */,
+				A9D2CE1D1C1B1C17000E1639 /* Snapfile in Resources */,
 				A9B764031BFA4BCB00DA25F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +598,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.jo2.CoreNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dfe8ae23-d993-49ba-a624-334588e00003";
 			};
 			name = Debug;
 		};
@@ -596,6 +617,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.jo2.CoreNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8f3e574f-89a5-4bba-9b61-9b367cd7f1f0";
 			};
 			name = Release;
 		};

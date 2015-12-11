@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="fastlane">
+  <testsuite name="run">
+    
+      
+      <testcase name="0: Verifying required fastlane version" time="0.000453">
+        
+      </testcase>
+    
+      
+      <testcase name="1: default_platform" time="0.00018">
+        
+      </testcase>
+    
+      
+      <testcase name="2: cocoapods" time="4.905505">
+        
+      </testcase>
+    
+      
+      <testcase name="3: cd .. &amp;&amp; mkdir -p ProvisioningProfiles" time="0.006989">
+        
+      </testcase>
+    
+      
+      <testcase name="4: sigh" time="6.989562">
+        
+      </testcase>
+    
+      
+      <testcase name="5: update_project_provisioning" time="0.969526">
+        
+      </testcase>
+    
+      
+      <testcase name="6: sigh" time="4.571977">
+        
+      </testcase>
+    
+      
+      <testcase name="7: update_project_provisioning" time="0.114949">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
